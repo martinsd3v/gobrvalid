@@ -1,4 +1,4 @@
-package govalid
+package gobrvalid
 
 import (
 	"fmt"
