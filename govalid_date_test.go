@@ -35,12 +35,15 @@ func TestDate(t *testing.T) {
 		assert.True(t, resultDate)
 		assert.True(t, resultDateAndHour)
 
+		dateZeroInvalid := "0001-10-35"
 		dateBDInvalid := "2020-10-35"
 		dateAndHourBDInvalid := "2020-10-10 56:40:55"
 
+		resultDateZero, _ := IsDate(dateZeroInvalid)
 		resultDate, _ = IsDate(dateBDInvalid)
 		resultDateAndHour, _ = IsDate(dateAndHourBDInvalid)
 
+		assert.False(t, resultDateZero)
 		assert.False(t, resultDate)
 		assert.False(t, resultDateAndHour)
 	})

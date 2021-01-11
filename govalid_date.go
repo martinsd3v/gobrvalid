@@ -56,7 +56,9 @@ func IsDate(date string) (isValid bool, dateTime time.Time) {
 
 	dateTime, err := time.Parse(layout, formated)
 
-	if err != nil {
+	if year == "0001" {
+		isValid = false
+	} else if err != nil {
 		isValid = false
 	} else {
 		isValid = true
